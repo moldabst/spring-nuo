@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <title>Welcome</title> -->
+	<link th:replace="layouts :: stylish" />
+	<style>
+		/* Стили для всего тела страницы */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Градиент от светло-синего к белому */
+            font-family: Arial, sans-serif; /* Общий шрифт для всего документа */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Стили для контейнера всего содержимого */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение элементов */
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh; /* Чтобы контент занимал минимум 80% экрана */
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+            padding: 30px; /* Отступы внутри контейнера */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+            border-radius: 12px; /* Скругленные углы для контейнера */
+        }
+
+        /* Стили для кнопок */
+        .btn-custom {
+            width: 100%;
+            max-width: 400px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            padding: 12px 18px; /* Более строгий вид */
+            border: 2px solid #4a90e2; /* Синяя рамка */
+            background-color: transparent; /* Прозрачный фон */
+            color: #4a90e2; /* Синий цвет текста */
+            transition: all 0.3s ease; /* Плавная анимация */
+            text-transform: uppercase; /* Верхний регистр текста */
+        }
+
+        /* Стили при наведении */
+        .btn-custom:hover {
+            background-color: #4a90e2; /* Синий фон при наведении */
+            color: #fff; /* Белый цвет текста при наведении */
+            transform: translateY(-2px); /* Плавный подъем кнопки */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Тень при наведении */
+        }
+
+        /* Анимация для появления контейнера */
+        .button-container {
+            animation: fadeIn 1s ease-in-out; /* Плавная анимация появления */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+	</style>
+</head>
+
+<body>
+<div class="content-wrapper">
+	<!--<div th:replace="layouts :: navbar"></div>-->
+
+	<!-- Контейнер для кнопок -->
+	<div class='container container-fluid button-container'>
+		<!--<a class='btn btn-outline-success btn-lg btn-custom' th:href="@{/app/employees/employees-list}">Перейти к списку
+			сотрудников</a>
+		<a class='btn btn-outline-success btn-lg btn-custom' th:href="@{/app/departments/departments-list}">Перейти к списку
+			отделов</a>-->
+
+		<br>
+		<!-- Новые кнопки -->
+		<a class='btn btn-outline-primary btn-lg btn-custom' th:href="@{/app/documentation}">Документация</a>
+		<a class='btn btn-outline-secondary btn-lg btn-custom' th:href="@{/app/calculations}">Начать расчеты</a>
+		<a class='btn btn-outline-info btn-lg btn-custom' th:href="@{/app/about}">О нас</a>
+	</div>
+</div>
+</body>
+
+</html>
